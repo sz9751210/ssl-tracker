@@ -3,13 +3,13 @@ package config
 import (
 	"log"
 
-	"github.com/alandev/go-ssl-tracker/types"
+	"github.com/alandev/ssl-monitoring/types"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
 func InitDatabase() (*gorm.DB, error) {
-	db, err := gorm.Open(sqlite.Open("ssl_monitor_db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("ssl_monitoring.sqlite"), &gorm.Config{})
 	if err != nil {
 		log.Fatal("can't connect to db", err)
 	}
